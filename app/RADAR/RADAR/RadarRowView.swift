@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct RadarRowView: View {
-    let item: RadarListItem
+    let item: RadarListItemReadModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top, spacing: 12) {
-                Image(systemName: item.profile.symbolName)
+                Image(systemName: item.primarySymbolName)
                     .font(.title3)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(item.title)
+                    Text(item.displayTitle)
                         .font(.headline)
 
                     Text(item.kickoffText)
@@ -20,7 +20,7 @@ struct RadarRowView: View {
 
                 Spacer()
 
-                StrengthDotsView(strength: item.strength)
+                StrengthDotsView(strength: item.profileStrength)
             }
 
             HStack(spacing: 8) {
@@ -40,6 +40,6 @@ struct RadarRowView: View {
 }
 
 #Preview {
-    RadarRowView(item: RadarMockData.listItems[0])
+    RadarRowView(item: RadarReadPreviewData.firstItem)
         .padding()
 }

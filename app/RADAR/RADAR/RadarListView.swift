@@ -1,22 +1,32 @@
 import SwiftUI
 
 struct RadarListView: View {
-    let items: [RadarListItem]
+    let response: RadarListResponse
 
     var body: some View {
-        List(items) { item in
-            NavigationLink {
-                MatchDetailView(detail: item.detail)
-            } label: {
-                RadarRowView(item: item)
+        Group {
+            if response.items.isEmpty {
+                ContentUnavailableView(
+                    "Ingen kampe",
+                    systemImage: "dot.radiowaves.left.and.right",
+                    description: Text(response.emptyStateMessage ?? "Ingen kampe i radar lige nu.")
+                )
+            } else {
+                List(response.items) { item in
+                    NavigationLink {
+                        MatchDetailView(detail: item.detail)
+                    } label: {
+                        RadarRowView(item: item)
+                    }
+                }
+                .listStyle(.plain)
             }
         }
-        .listStyle(.plain)
     }
 }
 
 #Preview {
     NavigationStack {
-        RadarListView(items: RadarMockData.listItems)
+        RadarListView(response: RadarReadPreviewData.listResponse)
     }
 }

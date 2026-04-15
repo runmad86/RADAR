@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MatchTopFieldView: View {
-    let detail: RadarMatchDetail
+    let detail: MatchDetailReadModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -18,9 +18,9 @@ struct MatchTopFieldView: View {
                 Spacer()
 
                 VStack(alignment: .trailing, spacing: 8) {
-                    Image(systemName: detail.profile.symbolName)
+                    Image(systemName: detail.primarySymbolName)
                         .font(.title2)
-                    StrengthDotsView(strength: detail.strength)
+                    StrengthDotsView(strength: detail.profileStrength)
                 }
             }
 
@@ -35,6 +35,6 @@ struct MatchTopFieldView: View {
 }
 
 #Preview {
-    MatchTopFieldView(detail: RadarMockData.listItems[0].detail)
+    MatchTopFieldView(detail: RadarReadPreviewData.firstItem.detail)
         .padding()
 }
