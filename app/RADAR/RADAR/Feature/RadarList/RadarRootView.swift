@@ -9,7 +9,7 @@ struct RadarRootView: View {
                 .navigationTitle("RADAR")
         }
         .task {
-            store.loadPreview()
+            await store.load()
         }
     }
 }

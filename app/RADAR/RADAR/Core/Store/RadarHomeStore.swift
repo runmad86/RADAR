@@ -4,12 +4,19 @@ import Foundation
 final class RadarHomeStore: ObservableObject {
     @Published private(set) var listResponse: RadarListResponse
 
-    init(listResponse: RadarListResponse = RadarReadPreviewData.listResponse) {
-        self.listResponse = listResponse
+    private let provider: RadarReadProviding
+
+    init(provider: RadarReadProviding = PreviewRadarReadProvider()) {
+        self.provider = provider
+        self.listResponse = RadarReadPreviewData.listResponse
     }
 
-    func loadPreview() {
-        listResponse = RadarReadPreviewData.listResponse
+    func load() async {
+        if let response = try? await provider.fetchRadarList() {
+            listResponse = response
+        } else {
+            listResponse = RadarReadPreviewData.listResponse
+        }
     }
 
     func replace(response: RadarListResponse) {
