@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MatchDetailView: View {
-    let detail: RadarMatchDetail
+    let detail: MatchDetailReadModel
 
     var body: some View {
         ScrollView {
@@ -33,23 +33,23 @@ struct MatchDetailView: View {
                     Text("Mulige outputs")
                         .font(.headline)
 
-                    if detail.outputs.hasNoClearCase {
+                    if detail.output.hasNoClearCase {
                         Text("Ingen klar case")
                             .foregroundStyle(.secondary)
                     } else {
-                        if !detail.outputs.baseCases.isEmpty {
+                        if !detail.output.baseCases.isEmpty {
                             Text("Base")
                                 .font(.subheadline.weight(.semibold))
-                            ForEach(detail.outputs.baseCases, id: \.self) { item in
+                            ForEach(detail.output.baseCases, id: \.self) { item in
                                 Text("• \(item)")
                             }
                         }
 
-                        if !detail.outputs.spikeCases.isEmpty {
+                        if !detail.output.spikeCases.isEmpty {
                             Text("Spids")
                                 .font(.subheadline.weight(.semibold))
                                 .padding(.top, 4)
-                            ForEach(detail.outputs.spikeCases, id: \.self) { item in
+                            ForEach(detail.output.spikeCases, id: \.self) { item in
                                 Text("• \(item)")
                             }
                         }
@@ -59,7 +59,7 @@ struct MatchDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Dom")
                         .font(.headline)
-                    Text(detail.verdict)
+                    Text(detail.verdictText)
                         .font(.body)
                 }
             }
@@ -72,6 +72,6 @@ struct MatchDetailView: View {
 
 #Preview {
     NavigationStack {
-        MatchDetailView(detail: RadarMockData.listItems[0].detail)
+        MatchDetailView(detail: RadarReadPreviewData.firstItem.detail)
     }
 }
