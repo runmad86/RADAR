@@ -1,12 +1,15 @@
 import SwiftUI
 
 struct RadarRootView: View {
-    private let response = RadarReadPreviewData.listResponse
+    @StateObject private var store = RadarHomeStore()
 
     var body: some View {
         NavigationStack {
-            RadarListView(response: response)
+            RadarListView(response: store.listResponse)
                 .navigationTitle("RADAR")
+        }
+        .task {
+            store.loadPreview()
         }
     }
 }
