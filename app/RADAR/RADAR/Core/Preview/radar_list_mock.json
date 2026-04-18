@@ -1,0 +1,142 @@
+{
+  "periodScope": "today",
+  "lastUpdatedAt": "2026-04-18T12:00:00Z",
+  "emptyStateMessage": null,
+  "items": [
+    {
+      "id": "arsenal-newcastle-2026-04-18",
+      "displayTitle": "Arsenal - Newcastle",
+      "competitionName": "Premier League",
+      "kickoffText": "I dag 18:30",
+      "primaryProfile": "open",
+      "profileStrength": 3,
+      "primarySymbolName": "bolt.horizontal.circle",
+      "supportIcons": ["wind", "figure.soccer", "person.3"],
+      "shortVerdict": "Tempo og plads peger mod åben kamp.",
+      "detail": {
+        "id": "detail-arsenal-newcastle-2026-04-18",
+        "title": "Arsenal - Newcastle",
+        "competitionName": "Premier League",
+        "kickoffText": "I dag 18:30",
+        "primaryProfile": "open",
+        "profileStrength": 3,
+        "primarySymbolName": "bolt.horizontal.circle",
+        "supportIcons": ["wind", "figure.soccer", "person.3"],
+        "whyBlocks": [
+          {
+            "iconName": "figure.soccer",
+            "title": "Begge hold kan leve i fart",
+            "subtitle": "Kampen lugter af skift og direkte angreb frem for ren kontrol."
+          },
+          {
+            "iconName": "person.3",
+            "title": "Matchup giver plads i overgange",
+            "subtitle": "Når presset brydes, åbner banen sig hurtigt i begge retninger."
+          },
+          {
+            "iconName": "wind",
+            "title": "Små støttefaktorer holder casen åben",
+            "subtitle": "Ikke kaos, men nok uro til at kampen kan tippe mod chancer."
+          }
+        ],
+        "output": {
+          "baseCases": ["Over 2.5 mål", "Begge hold scorer"],
+          "spikeCases": ["Over 1.5 mål i 2. halvleg"],
+          "hasNoClearCase": false
+        },
+        "verdictText": "Åben kamp er hovedlæsningen. Marked vælges bagefter, ikke først.",
+        "lastUpdatedAt": "2026-04-18T12:00:00Z"
+      }
+    },
+    {
+      "id": "roma-atalanta-2026-04-18",
+      "displayTitle": "Roma - Atalanta",
+      "competitionName": "Serie A",
+      "kickoffText": "I dag 20:45",
+      "primaryProfile": "hot",
+      "profileStrength": 2,
+      "primarySymbolName": "flame",
+      "supportIcons": ["exclamationmark.triangle", "flag", "shield"],
+      "shortVerdict": "Der er varme nok til en hed kamp-case.",
+      "detail": {
+        "id": "detail-roma-atalanta-2026-04-18",
+        "title": "Roma - Atalanta",
+        "competitionName": "Serie A",
+        "kickoffText": "I dag 20:45",
+        "primaryProfile": "hot",
+        "profileStrength": 2,
+        "primarySymbolName": "flame",
+        "supportIcons": ["exclamationmark.triangle", "flag", "shield"],
+        "whyBlocks": [
+          {
+            "iconName": "flag",
+            "title": "Betydning løfter spændingen",
+            "subtitle": "Begge sider har nok på spil til at små dueller kan vokse."
+          },
+          {
+            "iconName": "shield",
+            "title": "Stærke faser uden total kontrol",
+            "subtitle": "Det ligner ikke ren lås, men heller ikke fri målstorm."
+          },
+          {
+            "iconName": "exclamationmark.triangle",
+            "title": "Kort eller friktion kan blive vejen",
+            "subtitle": "Kampens energi peger mere mod temperatur end ren målcase."
+          }
+        ],
+        "output": {
+          "baseCases": ["Over 3.5 kort", "Kort til begge hold"],
+          "spikeCases": ["Over 4.5 kort"],
+          "hasNoClearCase": false
+        },
+        "verdictText": "Hed kamp er mere naturlig end målorgie. Kig temperatur før totals.",
+        "lastUpdatedAt": "2026-04-18T12:00:00Z"
+      }
+    },
+    {
+      "id": "juventus-lazio-2026-04-18",
+      "displayTitle": "Juventus - Lazio",
+      "competitionName": "Serie A",
+      "kickoffText": "I dag 18:00",
+      "primaryProfile": "locked",
+      "profileStrength": 2,
+      "primarySymbolName": "lock",
+      "supportIcons": ["shield", "clock", "minus"],
+      "shortVerdict": "Mere låst end levende lige nu.",
+      "detail": {
+        "id": "detail-juventus-lazio-2026-04-18",
+        "title": "Juventus - Lazio",
+        "competitionName": "Serie A",
+        "kickoffText": "I dag 18:00",
+        "primaryProfile": "locked",
+        "profileStrength": 2,
+        "primarySymbolName": "lock",
+        "supportIcons": ["shield", "clock", "minus"],
+        "whyBlocks": [
+          {
+            "iconName": "shield",
+            "title": "Begge hold kan leve i kontrol",
+            "subtitle": "Der er mange veje til en tæt kamp med få klare rum."
+          },
+          {
+            "iconName": "clock",
+            "title": "Kampen kan tage lang tid om at åbne sig",
+            "subtitle": "Første fase ligner afkodning og sikkerhed før risiko."
+          },
+          {
+            "iconName": "minus",
+            "title": "Ingen stærk spike-case endnu",
+            "subtitle": "Signalerne er mere dæmpede end eksplosive."
+          }
+        ],
+        "output": {
+          "baseCases": ["Under 3.0 mål", "Under 1.5 mål i 1. halvleg"],
+          "spikeCases": [],
+          "hasNoClearCase": false
+        },
+        "verdictText": "Låst kamp er den rigtige første læsning. Tålmodighed før action.",
+        "lastUpdatedAt": "2026-04-18T12:00:00Z"
+      }
+    }
+  ]
+}
