@@ -6,7 +6,7 @@ final class RadarHomeStore: ObservableObject {
 
     private let provider: RadarReadProviding
 
-    init(provider: RadarReadProviding = PreviewRadarReadProvider()) {
+    init(provider: RadarReadProviding = LocalJSONRadarReadProvider()) {
         self.provider = provider
         self.listResponse = RadarReadPreviewData.listResponse
     }
