@@ -5,17 +5,22 @@ final class RadarHomeStore: ObservableObject {
     @Published private(set) var listResponse: RadarListResponse
 
     private let provider: RadarReadProviding
+    private let fallbackResponse: RadarListResponse
 
-    init(provider: RadarReadProviding = PreviewRadarReadProvider()) {
+    init(
+        provider: RadarReadProviding = LocalJSONRadarReadProvider(),
+        initialResponse: RadarListResponse = RadarReadPreviewData.listResponse
+    ) {
         self.provider = provider
-        self.listResponse = RadarReadPreviewData.listResponse
+        self.fallbackResponse = initialResponse
+        self.listResponse = initialResponse
     }
 
     func load() async {
         if let response = try? await provider.fetchRadarList() {
             listResponse = response
         } else {
-            listResponse = RadarReadPreviewData.listResponse
+            listResponse = fallbackResponse
         }
     }
 
