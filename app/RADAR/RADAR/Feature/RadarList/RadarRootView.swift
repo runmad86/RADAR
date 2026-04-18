@@ -1,7 +1,19 @@
 import SwiftUI
 
 struct RadarRootView: View {
-    @StateObject private var store = RadarHomeStore()
+    @StateObject private var store: RadarHomeStore
+
+    init(
+        provider: RadarReadProviding = LocalJSONRadarReadProvider(),
+        initialResponse: RadarListResponse = RadarReadPreviewData.listResponse
+    ) {
+        _store = StateObject(
+            wrappedValue: RadarHomeStore(
+                provider: provider,
+                initialResponse: initialResponse
+            )
+        )
+    }
 
     var body: some View {
         NavigationStack {
@@ -15,5 +27,5 @@ struct RadarRootView: View {
 }
 
 #Preview {
-    RadarRootView()
+    RadarRootView(provider: PreviewRadarReadProvider())
 }
