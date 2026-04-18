@@ -12,10 +12,13 @@ final class RadarHomeStore: ObservableObject {
     }
 
     func load() async {
-        if let response = try? await provider.fetchRadarList() {
+        do {
+            let response = try await provider.fetchRadarList()
             listResponse = response
-        } else {
+            print("RADAR: loaded list response from provider \(String(describing: type(of: provider))) with \(response.items.count) items")
+        } catch {
             listResponse = RadarReadPreviewData.listResponse
+            print("RADAR: failed to load provider data, falling back to preview. Error: \(error.localizedDescription)")
         }
     }
 
